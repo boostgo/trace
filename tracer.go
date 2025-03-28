@@ -191,3 +191,8 @@ func (tracer *Tracer) Keys() []string {
 	}
 	return keys
 }
+
+// Generate new trace id
+func (tracer *Tracer) Generate(ctx context.Context) string {
+	return tracer.generator(ctx)
+}
