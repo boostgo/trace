@@ -130,17 +130,10 @@ func (tracer *Tracer) Set(ctx context.Context) context.Context {
 // Uses all registered protocols
 func (tracer *Tracer) TryGet(ctx context.Context) (string, bool) {
 	for _, key := range tracer.keys {
-		traceID := ctx.Value(key)
-		if traceID == nil {
-			return "", false
+		traceID, ok := TryGet(ctx, key)
+		if ok {
+			return traceID, ok
 		}
-
-		traceIdString, ok := traceID.(string)
-		if !ok {
-			return "", false
-		}
-
-		return traceIdString, true
 	}
 
 	return "", false
@@ -188,4 +181,13 @@ func (tracer *Tracer) Exist(ctx context.Context) bool {
 func (tracer *Tracer) ExistProtocol(ctx context.Context) bool {
 	_, ok := tracer.TryGetByProtocol(ctx, ProtocolAny)
 	return ok
+}
+
+// Keys return all registered unique keys
+func (tracer *Tracer) Keys() []string {
+	keys := make([]string, 0, len(tracer.keys))
+	for key := range tracer.uniqueKeys {
+		keys = append(keys, string(key))
+	}
+	return keys
 }
