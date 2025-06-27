@@ -1,2 +1,6 @@
+github.com/boostgo/collection v1.0.1 h1:5ZoNbM3Ls7Utt1wbFM4Aek6alwO6Vkfk4aHivHlFhz8=
+github.com/boostgo/collection v1.0.1/go.mod h1:pmRMjz01z9AsskSAwdZyR4RVEAJgjAx3kuIcBLTIahQ=
+github.com/boostgo/convert v1.0.2 h1:Auzut+PupfR5K2Njpd7qL6ZaXxEI5/iBrxyXThpRgkM=
+github.com/boostgo/convert v1.0.2/go.mod h1:KVjvc+yiCbfbIbJpzYOVJ1VPaa2ayPcT6wwD3QggSeI=
 github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
 github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
